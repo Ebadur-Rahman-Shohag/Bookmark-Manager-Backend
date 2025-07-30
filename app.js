@@ -30,7 +30,7 @@ app.delete("/bookmarks/:id", async (req, res) => {
 })
 
 // Update a bookmark
-app.update("/bookmarks/:id", async (req, res) => {
+app.patch("/bookmarks/:id", async (req, res) => {
     const id = req.params.id;
     const data = await req.body;
     await Bookmark.findByIdAndUpdate(id, data);
